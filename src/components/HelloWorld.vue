@@ -1,6 +1,7 @@
 <template>
   <div class="hello">
     唐三彩工具箱
+    <button @click="addUser">彩铃</button>
   </div>
 </template>
 
@@ -10,6 +11,14 @@ export default {
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
+    }
+  },
+  methods:{
+    addUser () {
+      this.$axios.post ('/api/user/addUser',{
+        name:'xiongcl',
+        age:'12'
+      })
     }
   }
 }
